@@ -1,20 +1,24 @@
 ﻿@model Ecommerce.Models.Product
 
 
-    <form asp-action="create" asp-controller="Product" method="post">
+<form asp-action="create" asp-controller="Product" method="post" enctype="multipart/form-data">
 
 
-        <div class="form-group">
-            <label asp-for="Name"  ></label>
-            <input asp-for="Name" class="form-control" />
-            
-        </div>
-        <div class="form-group">
-            <label asp-for="Price"></label>
-            <input asp-for="Price" class="form-control" />
-        </div>
-       
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="p_image"></label>
+        <input asp-for="p_image" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
 
 
-    </form>
+</form>
