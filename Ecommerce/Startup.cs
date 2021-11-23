@@ -1,6 +1,7 @@
 using Ecommerce.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,7 +28,7 @@ namespace Ecommerce
             services.AddControllersWithViews();
 
             services.AddDbContext<EcommerceDbContext>(options => options.UseSqlServer("Server=LAB4-126;Database=Ecomm;User Id=sa;password=aptech;Trusted_Connection=False;MultipleActiveResultSets=true;"));
-
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<EcommerceDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

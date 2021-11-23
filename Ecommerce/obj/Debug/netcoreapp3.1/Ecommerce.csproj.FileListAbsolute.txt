@@ -155,3 +155,9 @@ C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\P
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Product\delete.cshtml.g.cs
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Product\details.cshtml.g.cs
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Product\edit.cshtml.g.cs
+C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Account\Signup.cshtml.g.cs

@@ -11,16 +11,39 @@
 
     foreach (var item in Model)
     {
-       
-        <ul>
 
-            <li>
-                @item.Name | @item.Price
-                <a asp-controller="Product" asp-action="delete" asp-route-id="@item.Id">Delete</a>
-                <a asp-controller="Product" asp-action="details" asp-route-id="@item.Id">Details</a>
-                <a asp-controller="Product" asp-action="edit" asp-route-id="@item.Id">Edit</a>
-            </li>
-        </ul>
+        <div class="card" style="width: 18rem;">
+            <img src="@item.productimageurl" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@item.Name</h5>
+                <p class="card-text">@item.Price</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </div>
+        @*<img src="@item.productimageurl" height="400" width="400" />
+
+            <h4> @item.Price </h4>
+            <h4> @item.Name </h4>
+            <a asp-controller="Product" asp-action="delete" asp-route-id="@item.Id">Delete</a>
+            <a asp-controller="Product" asp-action="details" asp-route-id="@item.Id">Details</a>
+            <a asp-controller="Product" asp-action="edit" asp-route-id="@item.Id">Edit</a>*@
+
+
+
+
+
+
+
+
+        @*<ul>
+
+                <li>
+                    @item.Name | @item.Price
+                    <a asp-controller="Product" asp-action="delete" asp-route-id="@item.Id">Delete</a>
+                    <a asp-controller="Product" asp-action="details" asp-route-id="@item.Id">Details</a>
+                    <a asp-controller="Product" asp-action="edit" asp-route-id="@item.Id">Edit</a>
+                </li>
+            </ul>*@
 
     }
 
