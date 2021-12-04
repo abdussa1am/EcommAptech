@@ -5,46 +5,50 @@
 <a asp-controller="Product" asp-action="create">Create Product</a>
 
 
-@{
+
+<div class="row animate-box">
+    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+        <span>Cool Stuff</span>
+        <h2>Products.</h2>
+        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
+    </div>
+</div>
+
+<div id="fh5co-product">
+    <div class="container">
+
+
+        <div class="row">
+
+            @{
 
 
 
-    foreach (var item in Model)
-    {
+                foreach (var item in Model)
+                {
 
-        <div class="card" style="width: 18rem;">
-            <img src="@item.productimageurl" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">@item.Name</h5>
-                <p class="card-text">@item.Price</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
+                    <div class="col-md-4 text-center animate-box">
+                        <div class="product">
+                            <div class="product-grid" style="background-image:url(@item.productimageurl);">
+                                <div class="inner">
+                                    <p>
+                                        <a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+                                        <a asp-controller="Product" asp-action="details" asp-route-id="@item.Id" class="icon"><i class="icon-eye"></i></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="desc">
+                                <h3><a href="single.html">@item.Name</a></h3>
+                                <span class="price">@item.Price</span>
+                            </div>
+                        </div>
+                    </div>
+
+                }
+
+            }
+
+
         </div>
-        @*<img src="@item.productimageurl" height="400" width="400" />
-
-            <h4> @item.Price </h4>
-            <h4> @item.Name </h4>
-            <a asp-controller="Product" asp-action="delete" asp-route-id="@item.Id">Delete</a>
-            <a asp-controller="Product" asp-action="details" asp-route-id="@item.Id">Details</a>
-            <a asp-controller="Product" asp-action="edit" asp-route-id="@item.Id">Edit</a>*@
-
-
-
-
-
-
-
-
-        @*<ul>
-
-                <li>
-                    @item.Name | @item.Price
-                    <a asp-controller="Product" asp-action="delete" asp-route-id="@item.Id">Delete</a>
-                    <a asp-controller="Product" asp-action="details" asp-route-id="@item.Id">Details</a>
-                    <a asp-controller="Product" asp-action="edit" asp-route-id="@item.Id">Edit</a>
-                </li>
-            </ul>*@
-
-    }
-
-}
+    </div>
+</div>

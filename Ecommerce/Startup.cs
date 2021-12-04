@@ -27,7 +27,7 @@ namespace Ecommerce
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<EcommerceDbContext>(options => options.UseSqlServer("Server=LAB4-126;Database=Ecomm;User Id=sa;password=aptech;Trusted_Connection=False;MultipleActiveResultSets=true;"));
+            services.AddDbContext<EcommerceDbContext>(options => options.UseSqlServer("Server=LAB2-71C;Database=Ecomm;User Id=sa;password=aptech;Trusted_Connection=False;MultipleActiveResultSets=true;"));
             services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<EcommerceDbContext>();
         }
 
@@ -42,8 +42,9 @@ namespace Ecommerce
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+          
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();

@@ -14,6 +14,11 @@
         <input asp-for="Price" class="form-control" />
     </div>
     <div class="form-group">
+        <label asp-for="CategoryId"></label>
+        <select asp-for="CategoryId" asp-items="@ViewBag.a" class="form-control"></select>
+
+    </div>
+    <div class="form-group">
         <label asp-for="p_image"></label>
         <input asp-for="p_image" class="form-control" />
     </div>

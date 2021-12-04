@@ -13,9 +13,14 @@ namespace Ecommerce.Controllers
 
         private readonly UserManager<IdentityUser> _userManager;
 
-        public AccountController(UserManager<IdentityUser> userManager)
+        private readonly SignInManager<IdentityUser> _signInManager;
+
+        public AccountController(UserManager<IdentityUser> userManager , SignInManager<IdentityUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
+
+
         }
 
         public IActionResult Index()
@@ -34,26 +39,56 @@ namespace Ecommerce.Controllers
         public async Task<ActionResult> Signup(SignUpUserModel userModel)
         {
 
-            if (ModelState.IsValid == true)
+            if (ModelState.IsValid)
             {
 
 
-                var user = new IdentityUser 
-                { 
+                var user = new IdentityUser
+                {
                     Email = userModel.Email,
                     UserName = userModel.Email,
-                
+                    
                 };
 
 
-                await _userManager.CreateAsync(user);
-
+                await _userManager.CreateAsync(user , userModel.Password);
+               
             }
+           
 
 
             return View();
         }
 
+        //public ActionResult Login()
+        //{
+        //    return View();
+        //}
+
+       
+        //[HttpPost]
+        //public async Task<ActionResult> Login(LoginViewModel model)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+
+        //        var result = await _signInManager.PasswordSignInAsync(model.Email , model.Password ,false, false);
+
+
+
+        //        if (result.Succeeded)
+        //        {
+        //            return RedirectToAction("display", "Product");
+        //        }
+
+                
+        //    }
+
+        //    return View(model);
+
+
+           
+        //}
 
 
     }

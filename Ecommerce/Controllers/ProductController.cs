@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -37,6 +38,9 @@ namespace Ecommerce.Controllers
 
         public IActionResult create()
         {
+
+            ViewBag.a = new SelectList(_db.categories, "Id", "CName");
+
             return View();
         }
         [HttpPost]
@@ -58,18 +62,19 @@ namespace Ecommerce.Controllers
 
                 product.p_image.CopyToAsync(new FileStream(serverfolder, FileMode.Create));
             }
-          
+
 
 
             _db.products.Add(
-              
+
                 new Product
                 {
                     Name = product.Name,
                     Price = product.Price,
                     productimageurl = product.productimageurl,
+                    CategoryId = product.CategoryId
                 }
-                );
+                ) ;
             
             _db.SaveChanges();
             return View();
@@ -112,6 +117,23 @@ namespace Ecommerce.Controllers
 
             _db.products.Update(product);
             _db.SaveChanges();
+            return View();
+        }
+   
+
+        public IActionResult addCategory()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult addCategory(Category category)
+        {
+
+            _db.categories.Add(category);
+
+            _db.SaveChanges();
+
             return View();
         }
 

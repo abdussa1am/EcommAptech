@@ -23,6 +23,8 @@ namespace Ecommerce.Models
         public string productimageurl { get; set; }
 
 
+        public int CategoryId { get; set; }
 
+        public Category category { get; set; }
     }
 }
