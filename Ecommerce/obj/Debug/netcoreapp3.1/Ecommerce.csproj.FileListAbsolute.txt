@@ -160,6 +160,6 @@ C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.Asp
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
-C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Account\Signup.cshtml.g.cs
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Product\addCategory.cshtml.g.cs
+C:\Users\salam\Desktop\Ecommerce\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs

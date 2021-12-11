@@ -23,15 +23,35 @@ namespace Ecommerce.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
+
+
+
         public IActionResult Index()
         {
-            return View();
+
+            var a = from d in _db.products
+                    join j in _db.categories
+
+                    on d.CategoryId equals j.Id
+                    select new
+                    {
+                        CName = j.CName,
+                        Pname = d.Name,
+
+                    };
+
+            return View(a);
         }
 
-        public IActionResult display()
+        public IActionResult display(string searchString)
         {
 
             var all = _db.products.ToList();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                all = _db.products.Where(s => s.Name.Contains(searchString)).ToList();
+            }
 
             return View(all);
         }

@@ -4,51 +4,21 @@
 
 <a asp-controller="Product" asp-action="create">Create Product</a>
 
+<form asp-controller="Product" asp-action="display" >
 
 
-<div class="row animate-box">
-    <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-        <span>Cool Stuff</span>
-        <h2>Products.</h2>
-        <p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem provident. Odit ab aliquam dolor eius.</p>
-    </div>
-</div>
-
-<div id="fh5co-product">
-    <div class="container">
+    <input type="search" placeholder="Search" name="searchString"/>
+    <input type="submit" value="Search product" /> 
 
 
-        <div class="row">
-
-            @{
+</form>
 
 
-
-                foreach (var item in Model)
-                {
-
-                    <div class="col-md-4 text-center animate-box">
-                        <div class="product">
-                            <div class="product-grid" style="background-image:url(@item.productimageurl);">
-                                <div class="inner">
-                                    <p>
-                                        <a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-                                        <a asp-controller="Product" asp-action="details" asp-route-id="@item.Id" class="icon"><i class="icon-eye"></i></a>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="desc">
-                                <h3><a href="single.html">@item.Name</a></h3>
-                                <span class="price">@item.Price</span>
-                            </div>
-                        </div>
-                    </div>
-
-                }
-
-            }
-
-
-        </div>
-    </div>
-</div>
+@{
+    foreach (var item in Model)
+    {
+        <h1>@item.Id</h1>
+        <h1>@item.Name</h1>
+        <h1>@item.Price</h1>
+    }
+}
