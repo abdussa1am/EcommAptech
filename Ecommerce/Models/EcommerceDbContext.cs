@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.Models
 {
-    public class EcommerceDbContext : IdentityDbContext
+    public class EcommerceDbContext : IdentityDbContext<ApplicationUser>
     {
 
         public EcommerceDbContext(DbContextOptions<EcommerceDbContext> options) : base(options)
@@ -20,5 +20,7 @@ namespace Ecommerce.Models
         public DbSet<Product> products { get; set; }
 
         public DbSet<Category> categories { get; set; }
+
+       public DbSet<Order> orders { get; set; }
     }
 }

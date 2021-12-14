@@ -15,6 +15,9 @@ namespace Ecommerce.Models
         [DisplayName("Enter Email")]
         [EmailAddress]
         public string Email { get; set; }
+
+        public string Fname { get; set; }
+
         [Required]
 
         [DataType(DataType.Password)]

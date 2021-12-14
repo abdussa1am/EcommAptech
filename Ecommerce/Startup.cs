@@ -27,9 +27,19 @@ namespace Ecommerce
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<EcommerceDbContext>(options => options.UseSqlServer("Server=LAB2-71C;Database=Ecomm;User Id=sa;password=aptech;Trusted_Connection=Falsel;"));
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<EcommerceDbContext>();
-            services.ConfigureApplicationCookie(config => config.LoginPath = "/Home/checkforauthorization");
+            services.AddDbContext<EcommerceDbContext>(options => options.UseSqlServer("Server=LAB2-71C;Database=Eproject;User Id=sa;password=aptech;Trusted_Connection=false;"));
+            services.AddIdentity<ApplicationUser, IdentityRole>(
+                options =>
+                {
+                    options.Password.RequiredLength = 6;
+                    options.Password.RequireNonAlphanumeric = false;
+                    options.Password.RequireUppercase = false;
+                    options.Password.RequireDigit = false;
+                }
+               
+
+                ).AddEntityFrameworkStores<EcommerceDbContext>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

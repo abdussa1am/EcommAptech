@@ -29,18 +29,9 @@ namespace Ecommerce.Controllers
         public IActionResult Index()
         {
 
-            var a = from d in _db.products
-                    join j in _db.categories
+           
 
-                    on d.CategoryId equals j.Id
-                    select new
-                    {
-                        CName = j.CName,
-                        Pname = d.Name,
-
-                    };
-
-            return View(a);
+            return View();
         }
 
         public IActionResult display(string searchString)

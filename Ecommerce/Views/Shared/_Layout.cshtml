@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.AspNetCore.Identity.SignInManager<ApplicationUser> signin
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -30,6 +31,18 @@
                                 <li><a href="single.html">Single Shop</a></li>
                             </ul>
                         </li>
+
+                        @if (signin.IsSignedIn(User))
+                        {
+                            <li><a asp-controller="Account" asp-action="Logout">@User.Identity.Name</a></li>
+                            <li><a asp-controller="Account" asp-action="Logout">Logout</a></li>
+
+                        }
+                        else
+                        {
+                            <li><a asp-controller="Account" asp-action="Register">Sign up</a></li>
+                            <li><a asp-controller="Account" asp-action="Login">Login</a></li>
+                        }
                         <li><a href="about.html">About</a></li>
                         <li class="has-dropdown">
                             <a href="services.html">Services</a>
